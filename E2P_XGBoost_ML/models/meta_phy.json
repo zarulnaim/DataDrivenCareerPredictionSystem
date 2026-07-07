@@ -1,0 +1,28 @@
+{
+  "cluster_label": "Physics/Engineering",
+  "feature_order": [
+    "O_score",
+    "C_score",
+    "E_score",
+    "A_score",
+    "N_score",
+    "Numerical Aptitude",
+    "Spatial Aptitude",
+    "Perceptual Aptitude",
+    "Abstract Reasoning",
+    "Verbal Reasoning",
+    "GPA"
+  ],
+  "class_names": [
+    "Aerospace Engineer",
+    "Architect",
+    "Biomedical Engineer",
+    "Civil Engineer",
+    "Construction Engineer",
+    "Electrical Engineer",
+    "Environmental Engineer",
+    "Industrial Engineer",
+    "Mechanical Engineer",
+    "Robotics Engineer"
+  ]
+}

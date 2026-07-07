@@ -1,0 +1,33 @@
+{
+  "cluster_label": "Information Technology",
+  "feature_order": [
+    "O_score",
+    "C_score",
+    "E_score",
+    "A_score",
+    "N_score",
+    "Numerical Aptitude",
+    "Spatial Aptitude",
+    "Perceptual Aptitude",
+    "Abstract Reasoning",
+    "Verbal Reasoning",
+    "GPA"
+  ],
+  "class_names": [
+    "Data Analyst",
+    "Data Scientist",
+    "Database Administrator",
+    "Database Analyst",
+    "Game Designer",
+    "Game Developer",
+    "Game Tester",
+    "IT Project Manager",
+    "IT Support Specialist",
+    "Software Developer",
+    "Software Quality Assurance Tester",
+    "Technical Project Manager",
+    "UI/UX Designer",
+    "Video Game Tester",
+    "Web Developer"
+  ]
+}
