@@ -1,0 +1,1223 @@
+/* --- 1. OVERRIDES --- */
+
+/* Allow scrolling on the result page, as content is taller than dashboard */
+.dashboard-content.result-content-override {
+  align-items: flex-start; /* Align top instead of center */
+  overflow-y: auto; /* Enable vertical scroll */
+  padding-top: 40px;
+  padding-bottom: 60px;
+  height: 100%;
+}
+
+/* Adjust Container width for better reading */
+.result-content-override .container {
+  max-width: 1000px;
+}
+
+/* --- 2. HEADER AREA --- */
+.result-header {
+  text-align: center;
+  margin-bottom: 10px;
+  /* Tambah ini untuk pastikan container text center */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.result-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--dark-slate);
+  margin-bottom: 10px;
+  letter-spacing: -1px;
+}
+
+.result-header p {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+
+/* --- 3. GRID SYSTEM --- */
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+/* --- 4. CARDS --- */
+/* Update class .result-card dalam result.css */
+.result-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+  /* Tukar border kelabu ke border hijau cair macam academic card */
+  border: 1.5px solid rgba(16, 185, 129, 0.2);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Tambah effect hover supaya glow tu makin terang bila mouse lalu */
+.result-card:hover {
+  transform: translateY(-5px);
+  /* Outer glow warna hijau primary */
+  border-color: var(--primary);
+  box-shadow: 0 20px 40px -15px rgba(16, 185, 129, 0.15);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.card-header h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--dark-slate);
+  margin: 0;
+}
+
+/* Icon styling */
+.icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-box svg {
+  width: 20px;
+  height: 20px;
+}
+
+.soft-orange {
+  background: #fff7ed;
+  color: #f97316;
+}
+.soft-blue {
+  background: #eff6ff;
+  color: #3b82f6;
+}
+.soft-red {
+  background: #fef2f2;
+  color: #ef4444;
+}
+/* --- 5. PROGRESS BARS (PHP generated classes) --- */
+.bar-block {
+  margin-bottom: 20px;
+  text-align: left; /* Paksa bar tetap alignment kiri */
+  width: 100%;
+}
+
+.bar-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+.bar-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bar-percent {
+  font-family: "Monaco", monospace; /* Tech feel for numbers */
+  font-weight: 700;
+  color: var(--dark-slate);
+}
+
+.bar-bg {
+  width: 100%;
+  height: 10px; /* Thicker than original */
+  background: #f1f5f9;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 10px;
+  /* Optional: Add a shine effect */
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 1rem 1rem;
+}
+
+/* Tooltip Button Styling */
+.help-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  color: #64748b;
+  border: none;
+  font-size: 10px;
+  font-weight: bold;
+  cursor: help;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.help-dot:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* --- 6. ACADEMIC STRIP --- */
+.bottom-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.academic-strip {
+  background: white;
+  width: 100%;
+  padding: 20px 30px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+
+  /* Tambah transition effect ni */
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.academic-strip:hover {
+  transform: translateY(-5px); /* Effect naik atas */
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08); /* Bayang jadi tebal */
+  border-color: var(--primary); /* Optional: border jadi hijau sikit */
+}
+
+.acd-icon {
+  width: 48px;
+  height: 48px;
+  background: #f0fdf4;
+  color: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.acd-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.acd-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-left: 30px;
+  border-left: 1px solid #e2e8f0;
+}
+
+.acd-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #94a3b8;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.acd-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--dark-slate);
+}
+
+.acd-value.highlight {
+  font-size: 1.4rem;
+  color: var(--primary);
+}
+
+/* --- 7. CTA BUTTON --- */
+.action-area {
+  width: 100%;
+  max-width: 400px;
+}
+
+.btn-result-next {
+  padding: 18px;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.4);
+}
+
+/* --- 8. MOBILE RESPONSIVE --- */
+@media (max-width: 768px) {
+  .results-grid {
+    grid-template-columns: 1fr; /* Stack columns */
+    gap: 20px;
+  }
+
+  .academic-strip {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .acd-stat {
+    border-left: none;
+    border-top: 1px solid #e2e8f0;
+    padding-left: 0;
+    padding-top: 15px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .result-header h1 {
+    font-size: 2rem;
+  }
+}
+
+/* --- CAREER RESULT SPECIFIC STYLES --- */
+
+/* 1. Top Career Card Styling */
+.top-career-card {
+  border: 2px solid rgba(16, 185, 129, 0.3); /* Green outline */
+  background: linear-gradient(
+    to bottom,
+    #ffffff,
+    #f0fdf4
+  ); /* Subtle gradient */
+  margin-bottom: 30px;
+}
+
+.career-title-large {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.career-meta {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.badge-field,
+.badge-confidence {
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.badge-field {
+  background: #e2e8f0;
+  color: #475569;
+}
+
+.badge-confidence {
+  background: #dcfce7;
+  color: var(--primary);
+  border: 1px solid #86efac;
+}
+
+.career-desc {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* 2. Chips (Key Factors) */
+.text-subtle {
+  color: #94a3b8;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+
+.chips-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center; /* Pastikan chips sentiasa di tengah */
+  width: 100%;
+}
+
+.chip {
+  background: white;
+  border: 2px solid rgba(16, 185, 129, 0.3);
+  padding: 8px 16px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  cursor: help;
+  transition: all 0.2s ease;
+}
+
+.chip:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.chip-label {
+  font-weight: 600;
+  color: var(--dark-slate);
+}
+
+.chip-val {
+  background: #f1f5f9;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 700;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centerkan secara melintang */
+  text-align: center; /* Centerkan teks penerangan */
+}
+
+.result-card:has(.chips-container) {
+  margin-bottom: 30px; /* Tambah gap antara card ini dengan Top 2 & 3 */
+}
+
+/* 3. Secondary Matches (Mini Cards) */
+.mini-match {
+  position: relative;
+  padding-top: 40px; /* Space for rank */
+}
+
+.match-rank {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 2rem;
+  font-weight: 900;
+  color: rgba(16, 185, 129, 0.3); /* Watermark style number */
+  line-height: 1;
+}
+
+.match-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--dark-slate);
+  margin-bottom: 5px;
+  position: relative; /* Bring text above watermark */
+}
+
+.match-conf {
+  font-size: 0.85rem;
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.match-desc {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.5;
+  position: relative;
+}
+
+.error-msg {
+  background: #fef2f2;
+  color: #ef4444;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #fecaca;
+}
+
+.result-content-override .card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.dashboard-content:not(.result-content-override) .card-body {
+  display: block; /* Kembalikan ke asal */
+  text-align: left;
+  align-items: flex-start;
+}
+
+/* Inline overrides just to align job cards with the new layout structure if specific classes are missing in current CSS */
+.job-card-actions {
+  margin-top: 15px !important; /* Kurangkan dari 25px-30px */
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.btn-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-gmail {
+  background: #fee2e2;
+  color: #991b1b;
+}
+.btn-gmail:hover {
+  background: #fecaca;
+}
+
+.btn-wa {
+  background: #dcfce7;
+  color: #166534;
+}
+.btn-wa:hover {
+  background: #bbf7d0;
+}
+
+.btn-apply-job {
+  background: #2563eb;
+  color: #fff;
+}
+.btn-apply-job:hover {
+  background: #1d4ed8;
+}
+
+.btn-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+  filter: grayscale(1);
+}
+
+.job-meta-row {
+  display: flex;
+  gap: 12px;
+  margin: 8px 0 15px 0;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+.meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background-color: #f8fafc; /* Biru-kelabu sangat cair */
+  border: 1px solid #e2e8f0; /* Border nipis supaya nampak 'shape' */
+  border-radius: 20px; /* Bagi bulat terus */
+  color: #475569; /* Warna teks profesional */
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.meta-pill:hover {
+  background-color: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+/* Warna spesifik untuk ikon dalam tag */
+.meta-pill i {
+  color: #64748b; /* Ikon warna kelabu steel */
+}
+.is-expired-badge {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+/* --- 1. OVERRIDES (General Layout) --- */
+.dashboard-content.result-content-override {
+  align-items: flex-start;
+  overflow-y: auto;
+  padding-top: 40px;
+  padding-bottom: 60px;
+  height: 100%;
+}
+
+.result-content-override .container {
+  max-width: 1000px;
+}
+
+/* --- 2. HEADER AREA --- */
+.result-header {
+  text-align: center;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.result-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--dark-slate);
+  margin-bottom: 10px;
+  letter-spacing: -1px;
+}
+
+.result-header p {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+
+/* --- 3. GRID SYSTEM --- */
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+/* --- 4. CARDS (Base Styles) --- */
+.result-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+  border: 1.5px solid rgba(16, 185, 129, 0.2);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.result-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+  box-shadow: 0 20px 40px -15px rgba(16, 185, 129, 0.15);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.card-header h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--dark-slate);
+  margin: 0;
+}
+
+.icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* Prevent icon shrinking */
+}
+.icon-box svg {
+  width: 20px;
+  height: 20px;
+}
+
+.soft-orange {
+  background: #fff7ed;
+  color: #f97316;
+}
+.soft-blue {
+  background: #eff6ff;
+  color: #3b82f6;
+}
+.soft-red {
+  background: #fef2f2;
+  color: #ef4444;
+}
+
+/* --- 5. PROGRESS BARS --- */
+.bar-block {
+  margin-bottom: 20px;
+  text-align: left;
+  width: 100%;
+}
+.bar-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--secondary);
+}
+.bar-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.bar-percent {
+  font-family: "Monaco", monospace;
+  font-weight: 700;
+  color: var(--dark-slate);
+}
+.bar-bg {
+  width: 100%;
+  height: 10px;
+  background: #f1f5f9;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.bar-fill {
+  height: 100%;
+  border-radius: 10px;
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 1rem 1rem;
+}
+.help-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  color: #64748b;
+  border: none;
+  font-size: 10px;
+  font-weight: bold;
+  cursor: help;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.help-dot:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* --- 6. ACADEMIC STRIP --- */
+.bottom-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+.academic-strip {
+  background: white;
+  width: 100%;
+  padding: 20px 30px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.academic-strip:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08);
+  border-color: var(--primary);
+}
+.acd-icon {
+  width: 48px;
+  height: 48px;
+  background: #f0fdf4;
+  color: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.acd-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.acd-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-left: 30px;
+  border-left: 1px solid #e2e8f0;
+}
+.acd-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #94a3b8;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.acd-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--dark-slate);
+}
+.acd-value.highlight {
+  font-size: 1.4rem;
+  color: var(--primary);
+}
+
+/* --- 7. BUTTONS --- */
+.action-area {
+  width: 100%;
+  max-width: 400px;
+}
+.btn-result-next {
+  padding: 18px;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.4);
+}
+
+/* --- 8. SPECIFIC CAREER RESULT STYLES --- */
+.top-career-card {
+  border: 2px solid rgba(16, 185, 129, 0.3);
+  background: linear-gradient(to bottom, #ffffff, #f0fdf4);
+  margin-bottom: 30px;
+}
+.career-title-large {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+.career-meta {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.badge-field,
+.badge-confidence {
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.badge-field {
+  background: #e2e8f0;
+  color: #475569;
+}
+.badge-confidence {
+  background: #dcfce7;
+  color: var(--primary);
+  border: 1px solid #86efac;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.is-expired-badge {
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: #fee2e2;
+  color: #ef4444;
+  border: 1px solid #fca5a5;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.career-desc {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+.text-subtle {
+  color: #94a3b8;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+.chips-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  width: 100%;
+}
+.chip {
+  background: white;
+  border: 2px solid rgba(16, 185, 129, 0.3);
+  padding: 8px 16px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  cursor: help;
+  transition: all 0.2s ease;
+}
+.chip:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.chip-label {
+  font-weight: 600;
+  color: var(--dark-slate);
+}
+.chip-val {
+  background: #f1f5f9;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 700;
+}
+.result-card:has(.chips-container) {
+  margin-bottom: 30px;
+}
+.mini-match {
+  position: relative;
+  padding-top: 40px;
+}
+.match-rank {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 2rem;
+  font-weight: 900;
+  color: rgba(16, 185, 129, 0.3);
+  line-height: 1;
+}
+.match-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--dark-slate);
+  margin-bottom: 5px;
+  position: relative;
+}
+.match-conf {
+  font-size: 0.85rem;
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 10px;
+  position: relative;
+}
+.match-desc {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.5;
+  position: relative;
+}
+.error-msg {
+  background: #fef2f2;
+  color: #ef4444;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #fecaca;
+}
+
+/* --- 9. JOB RESULT PAGE SPECIFIC STYLES (NEW) --- */
+
+/* Header Override for Job Page */
+.job-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+.job-header-text {
+  text-align: left;
+}
+.job-header-text h1 {
+  margin-bottom: 5px;
+}
+
+/* Back Button */
+.btn-back-ghost {
+  width: auto;
+  height: auto;
+  padding: 10px 20px;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid #e2e8f0;
+  color: #64748b;
+  background: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.btn-back-ghost:hover {
+  background: #f8fafc;
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateX(-3px);
+}
+
+/* Filter Card Styling */
+.job-filter-form {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.filter-group {
+  flex: 1;
+  min-width: 250px;
+}
+.filter-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+.filter-select {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 2px solid #e2e8f0;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--dark-slate);
+  background-color: #fff;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  /* Optional: Custom dropdown arrow styling can be added here */
+}
+.filter-select:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+.filter-count-wrapper {
+  align-self: flex-end;
+  padding-bottom: 4px;
+}
+
+/* Job List Layout */
+.job-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Job Card Specifics */
+.job-card {
+  padding: 20px 25px; /* Kecilkan padding atas bawah */
+  margin-bottom: 20px;
+  padding-bottom: 15px !important;
+}
+.job-card:hover {
+  border-left-color: var(--primary); /* Accent on hover */
+}
+.job-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.job-header-left {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+.job-icon-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.job-title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--dark-slate);
+}
+.job-company {
+  font-weight: 500;
+  color: #64748b;
+  font-size: 0.95rem;
+  margin-top: 4px;
+  display: block;
+}
+.job-body {
+  padding-top: 5px;
+  width: 100% !important;
+  padding: 0 !important;
+}
+
+/* Job Meta */
+.job-meta-row {
+  display: flex;
+  gap: 12px;
+  margin: 10px 0 20px 0;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.job-divider {
+  margin: 12px 0 !important;
+  border-top: 1px solid #f1f5f9 !important;
+  opacity: 0.6;
+}
+
+/* Job Details Grid */
+.job-details-grid {
+  display: block; /* Tukar dari 'grid' ke 'block' */
+  width: 100%;
+  padding: 0 20px; /* Tambah padding sikit supaya tak rapat sangat dengan dinding card */
+}
+.job-details-full > div {
+  margin-bottom: 12px;
+}
+.job-section-title {
+  text-align: left; /* Pastikan tajuk DESCRIPTION pun duduk kiri */
+  margin-top: 15px; /* Kurangkan dari 25px/30px */
+  font-size: 0.75rem !important;
+  margin-bottom: 4px !important;
+}
+.job-text-body,
+.job-requirements-list {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  text-align: left;
+  margin: 0; /* Buang margin auto kalau ada */
+}
+/* Job Actions */
+.job-card-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.btn-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  padding: 10px 16px !important;
+  font-size: 0.9rem !important;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+}
+.btn-gmail {
+  background: #fee2e2;
+  color: #991b1b;
+}
+.btn-gmail:hover {
+  background: #fecaca;
+  transform: translateY(-2px);
+}
+
+.btn-wa {
+  background: #dcfce7;
+  color: #166534;
+}
+.btn-wa:hover {
+  background: #bbf7d0;
+  transform: translateY(-2px);
+}
+
+.btn-apply-job {
+  background: var(--primary);
+  color: #fff;
+  margin-left: auto;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+.btn-apply-job:hover {
+  background: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(16, 185, 129, 0.4);
+}
+.btn-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+  filter: grayscale(1);
+}
+
+/* No Jobs State */
+.no-jobs-card {
+  text-align: center;
+  padding: 60px 20px;
+  border-style: dashed;
+  border-color: #cbd5e1;
+}
+.no-jobs-icon {
+  margin: 0 auto 20px auto;
+}
+.no-jobs-text {
+  max-width: 400px;
+  margin: 10px auto;
+}
+
+/* --- 10. MEDIA QUERIES --- */
+@media (max-width: 768px) {
+  .results-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .academic-strip {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  .acd-stat {
+    border-left: none;
+    border-top: 1px solid #e2e8f0;
+    padding-left: 0;
+    padding-top: 15px;
+    width: 100%;
+    align-items: center;
+  }
+  .result-header h1 {
+    font-size: 2rem;
+  }
+}
+/* Letak dalam result.css atau bawah file PHP kau */
+.filter-container:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  border-color: #f5f7f6 !important; /* Warna border tetap stay */
+}
+
+/* Job card lain akan kekal ada animation sebab dia tak pakai class .filter-container */

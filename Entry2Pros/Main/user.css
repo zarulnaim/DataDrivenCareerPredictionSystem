@@ -1,0 +1,343 @@
+/* /Main/user.css */
+
+/* --- LAYOUT OVERRIDES --- */
+body {
+  overflow: hidden; /* Ensures no scrolling on desktop */
+}
+
+/* Ensure wrapper takes full height to push footer down */
+.dashboard-wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-gradient);
+  overflow: hidden; /* Strict no-scroll */
+}
+/* Dashboard content takes all available space between header and footer */
+.dashboard-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* Reduced padding to save vertical space */
+  padding: 10px 0;
+}
+
+.dashboard-content .container {
+  width: 100%;
+  max-width: 1100px;
+  text-align: center;
+}
+
+/* --- HEADER / USER PILL --- */
+.user-nav {
+  display: flex;
+  align-items: center;
+}
+
+.user-pill:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  transform: translateY(-1px);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--dark-slate);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.user-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--primary);
+}
+
+.sep {
+  width: 1px;
+  height: 18px;
+  background: #e2e8f0;
+}
+
+.logout-btn:hover {
+  background: #fef2f2; /* Light red background */
+  color: #dc2626;
+}
+
+.logout-icon {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+}
+
+.logout-btn:hover .logout-icon {
+  transform: translateX(3px); /* Animation: Move icon right */
+}
+
+/* --- HERO SECTION --- */
+.dashboard-hero {
+  margin-bottom: 40px;
+}
+
+.dashboard-hero h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--dark-slate);
+  margin-bottom: 10px;
+  letter-spacing: -1px;
+}
+
+.dashboard-hero .hero-sub {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+  line-height: 1.6;
+}
+
+.btn-large {
+  display: inline-flex;
+  width: auto;
+  padding: 16px 32px;
+  font-size: 1.1rem;
+  border-radius: 100px; /* Pill button */
+  box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.4); /* Green glow */
+}
+
+/* --- ROADMAP SECTION (1-4 Grid) --- */
+.roadmap-section {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.section-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--dark-slate);
+  margin-bottom: 25px;
+  text-align: left; /* Align title to left to match cards flow */
+  margin-left: 5px;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* Base Card Style */
+.step-card {
+  background: var(--white);
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  /* Reduced vertical padding from 30px to 20px */
+  padding: 20px 15px;
+  text-align: center;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- ACTIVE STATE (STEP 1) --- */
+.step-card.active {
+  border: 2px solid var(--primary); /* Green Border */
+  box-shadow: 0 15px 30px -10px rgba(16, 185, 129, 0.15);
+}
+
+/* Number Badge */
+.step-badge {
+  width: 28px;
+  height: 28px;
+  background: #f1f5f9;
+  color: #94a3b8;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  transition: var(--transition);
+}
+
+/* Active Number Badge */
+.step-card.active .step-badge {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+}
+
+/* Icon Container */
+.step-icon {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #cbd5e1; /* Inactive Icon Color */
+}
+
+.step-card.active .step-icon {
+  color: var(--primary);
+}
+
+.step-icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+/* Text Styling */
+.step-card h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark-slate);
+  margin-bottom: 8px;
+}
+
+.step-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Hover effect for inactive cards */
+.step-card:not(.active):hover {
+  transform: translateY(-5px);
+  border-color: #cbd5e1;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+  body {
+    overflow: auto; /* Allow scrolling on tablet/mobile */
+  }
+
+  .dashboard-wrapper {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr 1fr; /* 2x2 grid */
+  }
+}
+
+@media (max-width: 768px) {
+  .main-header {
+    padding: 20px;
+  }
+
+  .user-pill .username {
+    display: none; /* Hide name on mobile, keep icon */
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr; /* Stack on mobile */
+  }
+
+  .dashboard-hero h1 {
+    font-size: 2rem;
+  }
+}
+/* Clean, Modern Profile Pill */
+.profile-pill-new {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  padding: 4px 4px 4px 12px;
+  border-radius: 50px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  gap: 12px;
+}
+
+.user-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.avatar-mini {
+  width: 28px;
+  height: 28px;
+  background: #ecfdf5;
+  color: #10b981;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-mini svg {
+  width: 16px;
+  height: 16px;
+}
+
+.user-handle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.logout-minimal {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #fee2e2;
+  color: #ef4444;
+  padding: 6px 14px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.logout-minimal:hover {
+  background: #ef4444;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.logout-minimal svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Footer Ultra-Minimal & Halus */
+.footer-fixed {
+  width: 100%;
+  padding: 12px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  margin-top: auto;
+}
+
+.footer-fixed p {
+  margin: 0 !important;
+  color: #94a3b8;
+  /* Guna 9px atau 10px untuk saiz halus gila */
+  font-size: 0.85rem !important;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-align: center;
+  /* Ini rahsia supaya ayat panjang tak lari center */
+  width: 100%;
+  max-width: 800px;
+}
+.step-card.active:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -10px rgba(16, 185, 129, 0.25);
+}
+
+/* Ensure no scrolling on the whole page */
+.dashboard-wrapper {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}

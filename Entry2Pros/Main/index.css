@@ -1,0 +1,431 @@
+:root {
+  --primary: #10b981;
+  --primary-dark: #059669;
+  --secondary: #4b5563; /* Grey for text */
+  --dark-slate: #0f172a; /* Darker slate for contrast */
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --white: #ffffff;
+  --glass-bg: rgba(255, 255, 255, 0.9);
+  --bg-gradient: radial-gradient(circle at 80% 20%, #f1f5f9, #e2e8f0);
+
+  --radius-lg: 24px;
+  --radius-md: 12px;
+  --shadow-premium: 0 20px 50px -12px rgba(15, 23, 42, 0.1);
+  --transition: all 0.2s ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-main);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden; /* Prevents the scrollbar */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/* --- CUSTOM LOGO CSS --- */
+.main-header {
+  padding: 15px 50px !important; /* Kurangkan dari 30px */
+}
+
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* --- CLEAN WORD-ONLY LOGO --- */
+.brand-name-only {
+  font-size: 1.8rem; /* Slightly larger since there is no icon */
+  font-weight: 800;
+  color: #4b5563; /* Professional Grey */
+  letter-spacing: -1px;
+  cursor: default;
+  user-select: none;
+}
+
+.brand-name-only .text-green {
+  color: #10b981; /* Brand Green */
+  /* Optional: slightly different weight for the '2' to make it pop */
+  font-weight: 900;
+}
+
+/* Keep the wrapper for spacing */
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.main-header {
+  padding: 30px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-sup {
+  color: var(--primary);
+  font-size: 0.7em;
+  top: -0.4em;
+  position: relative;
+  font-weight: 800;
+}
+
+.brand-name-custom {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+}
+
+.text-grey {
+  color: var(--secondary);
+}
+.text-green {
+  color: var(--primary);
+}
+
+/* --- NAVIGATION & HERO --- */
+.admin-link {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition);
+}
+
+.admin-link:hover {
+  background: var(--white);
+  color: var(--dark-slate);
+}
+
+.hero-section {
+  flex: 1; /* Takes up remaining space between header and footer */
+  display: flex;
+  align-items: center;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr; /* Give more weight to the form side */
+  gap: 40px;
+  align-items: center;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--primary-dark);
+  border-radius: 100px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  color: var(--dark-slate);
+  margin-bottom: 25px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+.highlight {
+  color: var(--primary);
+}
+p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 480px;
+  margin-bottom: 35px;
+  line-height: 1.6;
+}
+
+.benefit-list {
+  list-style: none;
+}
+.benefit-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  color: var(--dark-slate);
+  font-weight: 500;
+}
+.check-icon {
+  color: var(--primary);
+  width: 22px;
+  height: 22px;
+}
+
+/* CARD & BUTTONS */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  padding: 45px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-premium);
+  text-align: center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 18px 30px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: var(--transition);
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  background: var(--primary);
+  color: white;
+}
+
+.btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-3px);
+}
+
+.divider {
+  margin: 30px 0;
+  height: 1px;
+  background: #e2e8f0;
+  position: relative;
+}
+.divider span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #f7f9fc;
+  padding: 0 12px;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  color: #94a3b8;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.f-icon-box {
+  width: 48px;
+  height: 48px;
+  background: #f1f5f9;
+  border-radius: 12px;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+.f-item:hover .f-icon-box {
+  background: var(--white);
+  color: var(--primary);
+  transform: translateY(-3px);
+}
+.f-item span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* Footer Styles */
+.main-footer {
+  padding: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically within the footer area */
+  text-align: center;
+}
+
+.main-footer p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+  margin: 0; /* Remove any default margins */
+}
+
+@media (max-width: 1024px) {
+  body {
+    overflow: auto;
+  }
+  .page-wrapper {
+    height: auto;
+    display: block;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 40px 20px;
+    gap: 50px;
+  }
+  .hero-text-area h1 {
+    font-size: 3rem;
+  }
+}
+
+/* Specific tweaks for User Login Page */
+
+/* Reduce padding slightly to ensure it fits one page */
+.auth-card {
+  text-align: left !important;
+  padding: 30px 40px !important;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.auth-card h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--dark-slate);
+  margin-bottom: 2px;
+}
+
+.styled-form {
+  gap: 12px !important;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.input-group input {
+  padding: 12px 16px; /* Slightly slimmer inputs */
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  font-family: "Poppins", sans-serif;
+  transition: var(--transition);
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: var(--white);
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+}
+
+.form-footer {
+  text-align: center;
+}
+
+.text-link {
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.text-link:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* Alert styling for PHP errors */
+.alert--error {
+  background: #fef2f2;
+  color: #dc2626;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  margin-top: 15px;
+  border: 1px solid #fee2e2;
+  text-align: center;
+}
+
+/* Registration specific width */
+.wide-card {
+  max-width: 650px !important; /* Made it wider to fit side-by-side inputs */
+  padding: 25px 40px !important;
+  margin-left: auto; /* Push it slightly to the right */
+}
+
+/* Custom styling for the Select dropdown */
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+}
+
+/* Admin Specific Styles */
+.auth-card h3 {
+  margin-bottom: 5px;
+  letter-spacing: -0.5px;
+}
+
+/* Ensure the wrapper centers the login card if it's the only thing on page */
+.page-wrapper[style*="justify-content: center"] {
+  background: radial-gradient(circle at 20% 80%, #f1f5f9, #cbd5e1);
+}
+
+/* Button hover for Admin (Darker) */
+.btn[style*="var(--dark-slate)"]:hover {
+  background: #1e293b !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(15, 23, 42, 0.2);
+}
+
+/* --- SWEETALERT CUSTOM STYLES --- */
+.swal-popup-custom {
+  border-radius: var(--radius-lg) !important;
+  font-family: "Poppins", sans-serif !important;
+}
+
+.swal-title-custom {
+  color: var(--dark-slate) !important;
+  font-weight: 800 !important;
+}
+
+.swal-confirm-button-custom {
+  background-color: var(--primary) !important;
+  border-radius: var(--radius-md) !important;
+  padding: 12px 30px !important;
+  font-weight: 600 !important;
+}

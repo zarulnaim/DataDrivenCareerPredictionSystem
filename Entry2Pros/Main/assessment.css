@@ -1,0 +1,486 @@
+/* --- TEST SESSION FINAL LAYOUT --- */
+
+/* 1. Grid & Main Container */
+.test-layout-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 30px; /* Rapatkan gap supaya muat satu skrin */
+  align-items: center;
+  text-align: left;
+}
+
+/* 2. Header Adjustment (Fix Footer Overlap) */
+.test-header {
+  margin-bottom: 20px;
+}
+
+.test-header h1 {
+  font-size: 2.1rem; /* Saiz ideal supaya tak tolak footer */
+  font-weight: 800;
+  margin-bottom: 8px;
+  letter-spacing: -1px;
+  line-height: 1.2;
+  color: #0f172a;
+}
+
+.test-header .hero-sub {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin-bottom: 0;
+}
+
+/* 3. Icon Box (Fix "Terapung" Bug) */
+.icon-box-fixed {
+  width: 48px;
+  height: 48px;
+  background: #ecfdf5;
+  color: #10b981;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon-box-fixed svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* 4. Step Cards Stack (Style Dashboard) */
+.test-steps-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.test-steps-stack .step-card {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 22px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.test-steps-stack .step-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.step-info-text {
+  flex: 1;
+}
+
+.step-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+.step-meta h4 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.step-info-text p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.badge-time {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #475569;
+  background: #f1f5f9;
+  padding: 3px 10px;
+  border-radius: 6px;
+}
+
+/* 5. Instruction Card (Sidebar) */
+.instruction-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+}
+
+.ins-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #0f172a;
+  margin-bottom: 20px;
+}
+
+.ins-header i {
+  color: #10b981;
+}
+
+.ins-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+.ins-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+/* 6. Green Tick Checklist (Match Screenshot 2) */
+.tick-green {
+  color: #10b981 !important;
+  stroke-width: 3px; /* Tebal & Jelas */
+  width: 18px;
+  height: 18px;
+}
+
+/* 7. Utility Classes */
+.w-full {
+  width: 100% !important;
+  justify-content: center;
+}
+
+.dashboard-content {
+  padding: 10px 0 !important; /* Paksa content rapat ke header/footer */
+}
+
+/* 8. Responsive Adjustment */
+@media (max-width: 1024px) {
+  .test-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    text-align: center;
+  }
+
+  .test-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .test-steps-stack .step-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px;
+  }
+
+  .step-meta {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .dashboard-wrapper {
+    overflow-y: auto;
+    height: auto;
+  }
+}
+
+/* Styling untuk button dalam form sidebar */
+.instruction-card button.btn-primary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.instruction-card button.btn-primary:hover {
+  background: #059669; /* Green dark sikit */
+  transform: translateY(-2px);
+}
+/* --- APTITUDE TEST SCREEN STYLE --- */
+.apt-main-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Ubah ke top sikit supaya tak melompat ke tengah */
+  padding: 60px 20px;
+  min-height: 800px; /* Hold space supaya footer tak naik atas */
+}
+
+.question-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 35px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.opt-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 25px 0;
+}
+
+.opt-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 16px 20px;
+  background: #f8fafc;
+  border: 2px solid #f1f5f9;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+}
+
+.opt-item:hover {
+  border-color: #10b981;
+  background: #f0fdf4;
+}
+
+.opt-item.selected {
+  border-color: #10b981;
+  background: #f0fdf4;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.1);
+}
+
+.opt-letter {
+  width: 32px;
+  height: 32px;
+  background: #f1f5f9;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #64748b;
+  font-size: 14px;
+}
+.selected .opt-letter {
+  background: #10b981;
+  color: #fff;
+  border-color: #10b981;
+}
+
+.test-nav-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.timer-sidebar {
+  background: #1e293b;
+  border-radius: 20px;
+  padding: 24px;
+  color: #fff;
+  text-align: center;
+  position: sticky;
+  top: 100px;
+}
+
+.time-val {
+  font-family: "Monaco", "Consolas", monospace;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #10b981;
+  margin: 10px 0;
+}
+
+/* --- GLOBAL & WRAPPER --- */
+body.apt-test-page {
+  background: #f8fafc;
+  font-family: "Poppins", sans-serif;
+}
+
+.page-wrapper.dashboard-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Paksa ambil seluruh tinggi screen */
+}
+.apt-main-container {
+  flex: 1 0 auto; /* Rahsia tolak footer ke bawah */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.apt-card {
+  width: 100%;
+  max-width: 850px;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
+  padding: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  min-height: 580px; /* Lock saiz supaya tak melompat */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+}
+.phase-badge {
+  background: #ecfdf5;
+  color: #059669;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 12px;
+  border: 1px solid #d1fae5;
+}
+.question-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.6;
+  margin: 20px 0;
+}
+
+/* --- OPTIONS GRID --- */
+.options-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.option-btn {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 18px 20px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  width: 100%;
+}
+
+.option-btn:hover {
+  border-color: #10b981;
+  background: #f0fdf4;
+}
+.option-btn.selected {
+  border-color: #10b981;
+  background: #f0fdf4;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.08);
+}
+
+/* --- NAVIGATION --- */
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #f1f5f9;
+}
+.nav-btn {
+  padding: 10px 25px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+  transition: 0.2s;
+}
+.nav-btn:active {
+  transform: scale(0.98);
+}
+.nav-btn-back {
+  background: #616161;
+}
+.nav-btn-skip {
+  background: #ff8f00;
+}
+.nav-btn-next {
+  background: #4caf50;
+}
+
+/* --- TIMER FLOATING --- */
+.timer-pill {
+  position: fixed;
+  right: 24px;
+  bottom: 100px;
+  background: #fff;
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  text-align: center;
+}
+.timer-label {
+  font-size: 12px;
+  color: #666;
+  display: block;
+}
+#timer-display {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2e7d32;
+}
+
+/* --- PROGRESS BAR WOWZES --- */
+.progress-wrapper {
+  margin-bottom: 20px;
+}
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.progress-container {
+  width: 100%;
+  height: 10px;
+  background: #e2e8f0;
+  border-radius: 50px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981 0%, #34d399 100%);
+  border-radius: 50px;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+}
+
+.question-content-area {
+  flex: 1; /* Ambil baki ruang yang ada */
+}
+.option-btn.selected .opt-letter {
+  background: #10b981;
+  color: #fff;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
